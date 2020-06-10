@@ -83,8 +83,7 @@ namespace FPSgame
         protected virtual void UpdateCamera()
         {
             // Camera movement from player input
-            Vector2 cameraMovement;
-            cameraDirectionEvent.TryReceive(out cameraMovement);
+            cameraDirectionEvent.TryReceive(out Vector2 cameraMovement);
             // TODO: InvertX
             // TODO: InvertY
 

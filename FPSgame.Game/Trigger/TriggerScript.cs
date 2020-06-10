@@ -32,7 +32,7 @@ namespace FPSgame
             if (source == null)
                 return;
 
-            Func<Task> spawnTask = async () =>
+            async Task spawnTask()
             {
                 // Clone
                 var spawnedEntities = source.Instantiate();
@@ -77,7 +77,7 @@ namespace FPSgame
 
                 // Cleanup
                 spawnedEntities.Clear();
-            };
+            }
 
             Script.AddTask(spawnTask);
         }

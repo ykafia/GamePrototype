@@ -113,11 +113,9 @@ namespace FPSgame.Player
             runSpeedEvent.TryReceive(out runSpeed);
             defaultState = (runSpeed > 0.15f) ? AnimationState.Walking : AnimationState.Idle;
 
-            WeaponFiredResult weaponResult;
-            var didFire = weaponFiredEvent.TryReceive(out weaponResult);
+            var didFire = weaponFiredEvent.TryReceive(out WeaponFiredResult weaponResult);
 
-            bool isReloading;
-            var didReload = isReloadingEvent.TryReceive(out isReloading);
+            var didReload = isReloadingEvent.TryReceive(out bool isReloading);
             isReloading |= didReload;
 
             // Update current animation
