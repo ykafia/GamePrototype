@@ -1,0 +1,8 @@
+!Texture
+Id: 2a4cab9d-7023-4c2e-8aa5-84f513cf64ad
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Textures/Flame/FIR001.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+IsStreamable: false

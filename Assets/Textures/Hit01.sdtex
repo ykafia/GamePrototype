@@ -1,0 +1,8 @@
+!Texture
+Id: 01742110-8ee8-4d09-8690-a9e95c6d1892
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Textures/Hit01.png
+Type: !ColorTextureType
+    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}
+IsStreamable: false

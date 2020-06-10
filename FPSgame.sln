@@ -1,0 +1,11 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 16
+VisualStudioVersion = 16.0.0.0
+MinimumVisualStudioVersion = 16.0.0.0
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSgame.Windows", "FPSgame.Windows\FPSgame.Windows.csproj", "{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSgame.Game", "FPSgame.Game\FPSgame.Game.csproj", "{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}"
+EndProject
+Global
+EndGlobal

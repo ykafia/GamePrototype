@@ -1,0 +1,19 @@
+!Animation
+Id: 0c4378fe-69f4-4bd2-a49b-c2a82c9f0bda
+SerializedVersion: {Stride: 2.0.0.0}
+Tags: []
+Source: !file ../../Resources/Animation/Gun_Run.fbx
+ClipDuration:
+    Enabled: false
+    StartAnimationTime: 0:00:00:00.0000000
+    EndAnimationTime: 0:00:30:00.0000000
+PivotPosition: {X: 0.0, Y: 0.0, Z: 0.0}
+RepeatMode: LoopInfinite
+Type: !StandardAnimationAssetType {}
+Skeleton: 3793daeb-f375-41e3-b16a-acc5387a23f6:Models/mannequinHandModel Skeleton
+RootMotion: false
+PreviewModel: d10888b1-6c34-469d-895e-5e518a92a599:Models/mannequinHandModel
+AnimationTimeMinimum: 0:00:00:00.0000000
+AnimationTimeMaximum: 0:00:00:00.5330000
+~SourceHashes:
+    06f5eee9d44aabd051b61887a8f382af~../../Resources/Animation/Gun_Run.fbx: 8a3be5e2d526a0abb8e2309f8c779456

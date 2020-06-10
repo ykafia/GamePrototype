@@ -1,0 +1,80 @@
+!PrefabAsset
+Id: 512c9dce-0bf5-4460-8247-a24f5f04bf6f
+SerializedVersion: {Stride: 3.1.0.1}
+Tags: []
+Hierarchy:
+    RootParts:
+        - ref!! 842aa551-a863-4fcd-ba64-818658bfeefd
+        - ref!! 2ae50792-796e-44c5-a01f-17b2e2bc9b62
+    Parts:
+        -   Entity:
+                Id: 2ae50792-796e-44c5-a01f-17b2e2bc9b62
+                Name: Wall0x2x5
+                Components:
+                    db07bec9b88cb84e9f8d6d3511eb10f2: !TransformComponent
+                        Id: 3d8a7344-ac30-4e9a-8a28-c5c07ea54e0f
+                        Position*: {X: 0.0, Y: 3.0, Z: 2.5}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6585e6d3aa27884f8d14790bf65b8607: !ModelComponent
+                        Id: b43613d8-f2be-4c72-837c-532967d2ea73
+                        Model: 4344a995-1510-42b7-91d3-46527d78d2fd:Models/Wall0x2x5
+                        Materials:
+                            ec9522ed2e91694abd8663b5b8ada228~0: 1dc1518b-2677-4779-b558-cd1f37ea72d7:Materials/GridMTWall
+                    74299af04257e746be4dcca2e071c23f: !StaticColliderComponent
+                        Id: be60850a-3e23-4d02-a270-48926a356817
+                        CanSleep: true
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            c43a4bb1930ada42a1651c91b5317898: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 0.1, Y: 2.0, Z: 5.0}
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+            Base:
+                BasePartAsset: 402f9e33-d321-4b3a-a9b5-9b2468e9d6d2:BlocksPrefabs/Wall0x2x5
+                BasePartId: fbdff817-df62-4a56-83f8-19a9d12589b8
+                InstanceId: c6c70320-c71b-454b-a88c-2c7cc2fc9237
+        -   Folder: null
+            Entity:
+                Id: 842aa551-a863-4fcd-ba64-818658bfeefd
+                Name: Wall0x2x5
+                Components:
+                    db07bec9b88cb84e9f8d6d3511eb10f2: !TransformComponent
+                        Id: 03739ca7-4216-4302-8743-cc204c28b41e
+                        Position: {X: 0.0, Y: 1.0, Z: 2.5}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    6585e6d3aa27884f8d14790bf65b8607: !ModelComponent
+                        Id: 8be738b5-f1ef-4652-ac92-fcbd3b95d1bd
+                        Model: 4344a995-1510-42b7-91d3-46527d78d2fd:Models/Wall0x2x5
+                        Materials:
+                            ec9522ed2e91694abd8663b5b8ada228~0: 1dc1518b-2677-4779-b558-cd1f37ea72d7:Materials/GridMTWall
+                    74299af04257e746be4dcca2e071c23f: !StaticColliderComponent
+                        Id: 59ddcb77-638b-4d9c-a8f8-41e77b859bf9
+                        CanSleep: true
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        AlwaysUpdateNaviMeshCache: false
+                        ColliderShapes:
+                            c43a4bb1930ada42a1651c91b5317898: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 0.1, Y: 2.0, Z: 5.0}
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+            Base:
+                BasePartAsset: 402f9e33-d321-4b3a-a9b5-9b2468e9d6d2:BlocksPrefabs/Wall0x2x5
+                BasePartId: fbdff817-df62-4a56-83f8-19a9d12589b8
+                InstanceId: bec99265-1f89-4104-a152-bc915308f621
