@@ -49,8 +49,10 @@ namespace FPSgame.Player
                     {
                         if (result.Collider is RigidbodyComponent rigidBody)
                         {
+                            
                             onHold = Entity.Scene.Entities.First(e => e.Get<RigidbodyComponent>() == rigidBody);
                             isHolding = true;
+
                         }
                     }
                 }
@@ -64,17 +66,19 @@ namespace FPSgame.Player
                 var onHand = Entity.Transform.Parent.Position + Entity.Transform.WorldMatrix.Forward*3 + Vector3.UnitY*1.5f;
                 if(onHold != null)
                 {
-                    var impulse = onHand - onHold.Transform.Position;
-                    impulse.Normalize();
-                    onHold
-                        .Get<RigidbodyComponent>()?
-                        .ApplyImpulse(
-                            // Vector3.UnitY * onHold.Get<RigidbodyComponent>().Mass *
-                            // (float) Game.UpdateTime.Elapsed.TotalSeconds *
-                            // 10f *
-                            // (1+(Height / onHold.Transform.Position.Y)%1)
-                            impulse * 2
-                        );
+                    // var impulse = onHand - onHold.Transform.Position;
+                    // impulse.Normalize();
+                    // onHold
+                    //     .Get<RigidbodyComponent>()?
+                    //     .ApplyImpulse(
+                    //         // Vector3.UnitY * onHold.Get<RigidbodyComponent>().Mass *
+                    //         // (float) Game.UpdateTime.Elapsed.TotalSeconds *
+                    //         // 10f *
+                    //         // (1+(Height / onHold.Transform.Position.Y)%1)
+                    //         (impulse.Length() < 1)?impulse*impulse:impulse
+                    //     );
+                    onHold.Transform.Position += Vector3.UnitY * 3 * (float)Game.UpdateTime.Elapsed.TotalSeconds;
+                    
                 }
                 
                 

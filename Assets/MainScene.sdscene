@@ -1372,8 +1372,8 @@ Hierarchy:
                         MaxPullDistance: 20.0
                         PullImpulse: 50.0
                         Cooldown: 1.0
-                    e45f49e2cb7a5fecbbc2c0e2b1a98694: !FPSgame.Player.GravityPickUpScript,FPSgame.Game
-                        Id: 26cb414b-dc60-4cbe-925a-b765d64601b4
+                    338e92b66c07d443a838c3dadb786e4a: !FPSgame.Player.SimplePickUpScript,FPSgame.Game
+                        Id: e5b36585-38fb-4beb-aa01-937ad6a15019
                         MaxPickUpDistance: 2.0
                         Height: 1.0
         -   Folder: null
@@ -3318,7 +3318,7 @@ Hierarchy:
                         Children: {}
                     80bedf4804a053b9d405e4f3b2a60485: !FPSgame.InitPhysics,FPSgame.Game
                         Id: 5a7ada99-9486-44c2-b01a-64f8a42b7d94
-                        FrictionForAll: 1.0
+                        FrictionForAll: 0.0
         -   Folder: null
             Entity:
                 Id: d8495a2a-d8e2-4916-9cbb-57a26f0d5b3d
