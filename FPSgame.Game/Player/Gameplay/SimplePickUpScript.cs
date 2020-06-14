@@ -67,7 +67,6 @@ namespace FPSgame.Player
                 if(onHold!=null)
                 {
                     onHold.Transform.Position = Vector3.Transform(Entity.Transform.Parent.Position + Entity.Transform.WorldMatrix.Forward * 3 + Vector3.UnitY *1.5f, onHold.Transform.Rotation);
-                    
                 }
             }
         }
