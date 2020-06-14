@@ -47,12 +47,9 @@ namespace FPSgame.Player
 
                     var result = this.GetSimulation().Raycast(raycastStart, raycastEnd);
 
-                    var weaponFired = new WeaponFiredResult { HitResult = result, DidFire = true, DidHit = false };
 
                     if (result.Succeeded && result.Collider != null)
                     {
-                        weaponFired.DidHit = true;
-
                         if (result.Collider is RigidbodyComponent rigidBody)
                         {
                             onHold = Entity.Scene.Entities.First(e => e.Get<RigidbodyComponent>() == rigidBody);

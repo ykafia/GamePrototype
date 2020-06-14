@@ -1336,12 +1336,6 @@ Hierarchy:
                         Id: edb35084-3395-4802-b285-71d328fcf401
                         RotationSpeed: 1.0
                         RotationAdaptationSpeed: 5.0
-                    d4e63576328447efdd4bfc75ffc1d988: !FPSgame.Player.GravityPullScript,FPSgame.Game
-                        Id: 83a08fac-e5de-42fc-ab11-6d919f854125
-                        PullDuration: 0.5
-                        MaxPullDistance: 50.0
-                        PullImpulse: 100.0
-                        Cooldown: 1.0
                     d23a3a8137177a7b80106119ed8b30b1: !FPSgame.EffectController,FPSgame.Game
                         Id: 32dd5610-ea1c-4978-8ed1-96c7cf3e08ea
                         TriggerGroup:
@@ -1371,6 +1365,17 @@ Hierarchy:
                                     Position: {X: 0.0, Y: 0.0, Z: 0.0}
                                     Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                                     Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                    f6e907bdc0a24cf3c8473138bbea78ff: !FPSgame.Player.GravityForceScript,FPSgame.Game
+                        Id: 8aaa7eac-6232-4138-8263-6fbeaa7dfcda
+                        ForceDirection: Push
+                        PullDuration: 5.0
+                        MaxPullDistance: 20.0
+                        PullImpulse: 50.0
+                        Cooldown: 1.0
+                    e45f49e2cb7a5fecbbc2c0e2b1a98694: !FPSgame.Player.GravityPickUpScript,FPSgame.Game
+                        Id: 26cb414b-dc60-4cbe-925a-b765d64601b4
+                        MaxPickUpDistance: 2.0
+                        Height: 1.0
         -   Folder: null
             Entity:
                 Id: 4e37a152-95ce-4314-b964-6c6bc552c136
@@ -3313,7 +3318,7 @@ Hierarchy:
                         Children: {}
                     80bedf4804a053b9d405e4f3b2a60485: !FPSgame.InitPhysics,FPSgame.Game
                         Id: 5a7ada99-9486-44c2-b01a-64f8a42b7d94
-                        FrictionForAll: 5.0
+                        FrictionForAll: 1.0
         -   Folder: null
             Entity:
                 Id: d8495a2a-d8e2-4916-9cbb-57a26f0d5b3d
