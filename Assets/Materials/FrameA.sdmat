@@ -45,6 +45,15 @@ Attributes:
             Value: 1.0
         SpecularCavity: !ComputeFloat
             Value: 1.0
+    Emissive: !MaterialEmissiveMapFeature
+        EmissiveMap: !ComputeShaderClassColor
+            MixinReference: ComputeColorFrame
+            Generics: 
+                amplitude: !ComputeColorParameterFloat
+                    Value: 5.0
+            CompositionNodes: {}
+        Intensity: !ComputeFloat
+            Value: 1.0
     Overrides:
         UVScale: {X: 1.0, Y: 1.0}
 Layers: {}

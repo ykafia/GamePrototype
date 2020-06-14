@@ -2,12 +2,13 @@
 SerializedVersion: {Assets: 3.1.0.0}
 Meta:
     Name: FPSgame.Windows
-    Version: 1.0.0.0
+    Version: 1.0.0
     Authors: []
     Owners: []
     Dependencies: null
 AssetFolders:
     -   Path: !dir Assets
+    -   Path: !dir Effects
 ResourceFolders:
     - !dir Resources
 OutputGroupDirectories: {}

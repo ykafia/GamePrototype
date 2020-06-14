@@ -54,6 +54,7 @@ Hierarchy:
         - ref!! 549631b6-83ff-40e5-b928-4c0b341f17bd
         - ref!! 5a227b5d-5ddc-4a35-8b34-2c0842e06a04
         - ref!! 8561cc0f-afd9-42c8-b7ff-e232aa754599
+        - ref!! d73ea548-967b-4c34-a869-5721b4dae5a6
     Parts:
         -   Entity:
                 Id: 033850a8-7be8-422b-b34f-bbc83ec83597
@@ -562,7 +563,7 @@ Hierarchy:
                         Id: 51f4470c-7354-4595-829e-a3442ddaa65f
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 1.0
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -825,7 +826,7 @@ Hierarchy:
                         Id: ed67886c-c8e3-4f14-a692-a4aa374c56d8
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 1.0
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -1324,17 +1325,52 @@ Hierarchy:
                         Name: null
                         Projection: Perspective
                         Slot: f1ef5817-0725-4b1a-abc9-845d101ec0e6
-                    7e880022b3b3f743a0686a19d7ecd8e1: !FPSgame.FpsCamera,FPSgame.Game
-                        Id: 2200887e-b3b3-43f7-a068-6a19d7ecd8e1
-                        RotationSpeed: 0.02355
-                        RotationAdaptationSpeed: 5.0
-                    e3f466ccb7fa4a4e816d3113bb7c953a: !FPSgame.Player.WeaponScript,FPSgame.Game
-                        Id: cc66f4e3-fab7-4e4a-816d-3113bb7c953a
-                        MaxShootDistance: 50.0
-                        ShootImpulse: 12.0
-                        Cooldown: 0.4
+                    9731d2d0203d33203b3b5b03b5d47f6f: !FPSgame.Player.WeaponScript,FPSgame.Game
+                        Id: 6fb5bd5b-3882-4f0f-a6c8-2975b21d1c82
+                        MaxShootDistance: 100.0
+                        ShootImpulse: 5.0
+                        Cooldown: 0.3
                         ReloadCooldown: 2.0
                         RemainingBullets: ref!! 722ddea3-2ffa-4dc2-83c3-44dedd18fc64
+                    c995e23935bb3ab7f61227ebf37c4136: !FPSgame.FpsCamera,FPSgame.Game
+                        Id: edb35084-3395-4802-b285-71d328fcf401
+                        RotationSpeed: 1.0
+                        RotationAdaptationSpeed: 5.0
+                    d4e63576328447efdd4bfc75ffc1d988: !FPSgame.Player.GravityPullScript,FPSgame.Game
+                        Id: 83a08fac-e5de-42fc-ab11-6d919f854125
+                        PullDuration: 0.5
+                        MaxPullDistance: 50.0
+                        PullImpulse: 100.0
+                        Cooldown: 1.0
+                    d23a3a8137177a7b80106119ed8b30b1: !FPSgame.EffectController,FPSgame.Game
+                        Id: 32dd5610-ea1c-4978-8ed1-96c7cf3e08ea
+                        TriggerGroup:
+                            Name: WeaponFired
+                            TriggerEvents:
+                                668a929ef6944cfd02b7c83f5f51494e:
+                                    Name: MuzzleFlash
+                                    SourcePrefab: e17ddf92-c58c-4bf9-b61d-0137eeda5c61:VFXPrefabs/vfx-RichMuzzleFlash
+                                    FollowEntity: false
+                                    Duration: 3.0
+                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                8c9d7f045f2b1c21950f9ba5946861f5:
+                                    Name: BulletImpact
+                                    SourcePrefab: 65a8bbc8-38a8-4980-9554-267506f5becd:VFXPrefabs/vfx-RichBulletImpact
+                                    FollowEntity: false
+                                    Duration: 3.0
+                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                4c399b94f34f9f9c563a5268213ca309:
+                                    Name: DamagedTrail
+                                    SourcePrefab: ce8f7684-4068-444b-83c2-c3320fd12789:VFXPrefabs/vfx-DamagedTrail
+                                    FollowEntity: false
+                                    Duration: 3.0
+                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
         -   Folder: null
             Entity:
                 Id: 4e37a152-95ce-4314-b964-6c6bc552c136
@@ -2005,7 +2041,7 @@ Hierarchy:
                         Id: 9ca3d8b5-f1f4-450d-9436-6a9703e4388b
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 0.8
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -2220,7 +2256,7 @@ Hierarchy:
                         Id: 23a86426-f0e7-4874-9274-609d8fb4ec24
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 1.0
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -2361,7 +2397,7 @@ Hierarchy:
                         Id: accea782-8df6-4071-b492-cb4cca4e3001
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 0.8
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -2589,30 +2625,24 @@ Hierarchy:
                                 Radius: 0.4
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    3f1a23a17e66d8489193aa2eca6779e1: !FPSgame.Player.PlayerController,FPSgame.Game
-                        Id: a1231a3f-667e-48d8-9193-aa2eca6779e1
-                        MaxRunSpeed: 9.0
-                    5cea3fc41b5e1c40865911bd77ee624c: !FPSgame.Player.PlayerInput,FPSgame.Game
-                        Id: c43fea5c-5e1b-401c-8659-11bd77ee624c
+                    6ec67138ca4b20cd9154c92cdf91e076: !FPSgame.Player.PlayerController,FPSgame.Game
+                        Id: 4b87ed7e-f2a8-4715-80af-e31cc28e7bcc
+                        MaxRunSpeed: 5.0
+                    22b0384a9f7cb9c905bdc171f1bd96b5: !FPSgame.Player.PlayerInput,FPSgame.Game
+                        Id: 41fd9bdd-71b9-4ee0-8c72-c2beda49c34e
                         Priority: -1000
                         DeadZone: 0.25
                         Camera: ref!! 79c1cebd-d690-4e7f-b9d1-d3a9197c95a2
-                        MouseSensitivity: 100.0
+                        MouseSensitivity: 5.0
                         KeysLeft:
-                            79c1d8abdc0cce2b4221ece447bdec9e: Left
-                            0fe771bf0347303773c1aecc0768b5f3: Q
+                            1e56f4905ab02658987f5a2fedb64956: Q
                         KeysRight:
-                            c252e2acf9e4758efd9baa879ef896f5: Right
-                            924ede849ca80a1141ea7b4cc4c9d2dd: D
+                            c669bb99f02309efd0953b07f79075d9: D
                         KeysUp:
-                            643ce2244c48c42beffae7d0a93fcca2: Up
-                            84e9bdfa0c56e6e70fb52fb67fdf26c0: W
+                            3d8ba60f445649bcb76c7d78ee895d20: Z
                         KeysDown:
-                            c710581bbfee7f9dbffa87d8b423a961: Down
-                            9861448150847263e1dcce732406e8b4: S
-                        KeysReload:
-                            f7748360940667938216bda161f12ed0: E
-                            05744cc71fc6762cd1820202d01398ed: R
+                            e4fc9f0b1481a3bd3fcb7d77b86a549c: S
+                        KeysReload: {}
         -   Folder: Ground/Ceiling
             Entity:
                 Id: 9e3e26b2-925d-4a78-b2f4-a38462eaeabc
@@ -2678,7 +2708,7 @@ Hierarchy:
                         Id: fdc5333d-36c5-4982-aa1d-537f8c5ef9e2
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 0.8
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -2928,7 +2958,7 @@ Hierarchy:
                         Id: 546dce81-e479-4f4d-9250-ca52dc991e16
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 0.8
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -3271,6 +3301,19 @@ Hierarchy:
                 BasePartAsset: 89d5d5fd-a946-4166-be0a-3e5e27556f59:BlocksPrefabs/GridBase10x10
                 BasePartId: b045349c-565e-4488-9130-a795b0e3b229
                 InstanceId: af6f3309-8b8a-414b-ae56-d05764943206
+        -   Entity:
+                Id: d73ea548-967b-4c34-a869-5721b4dae5a6
+                Name: Startup
+                Components:
+                    93ad3b5584a649a737cc5d6a011534fd: !TransformComponent
+                        Id: 925b590e-c73b-43c0-a064-7c4f3d341040
+                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    80bedf4804a053b9d405e4f3b2a60485: !FPSgame.InitPhysics,FPSgame.Game
+                        Id: 5a7ada99-9486-44c2-b01a-64f8a42b7d94
+                        FrictionForAll: 5.0
         -   Folder: null
             Entity:
                 Id: d8495a2a-d8e2-4916-9cbb-57a26f0d5b3d
@@ -3378,7 +3421,7 @@ Hierarchy:
                         Id: 62726783-05b0-46fa-b5c0-9f468d32e913
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 1.0
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
@@ -3646,7 +3689,7 @@ Hierarchy:
                         Id: 6d80131e-3290-447e-b37a-29ff2d9b25e8
                         CanSleep: false
                         Restitution: 0.0
-                        Friction: 0.5
+                        Friction: 1.0
                         RollingFriction: 0.0
                         CcdMotionThreshold: 0.0
                         CcdSweptSphereRadius: 0.0
