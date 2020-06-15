@@ -47,13 +47,13 @@ Attributes:
             Value: 1.0
     Emissive: !MaterialEmissiveMapFeature
         EmissiveMap: !ComputeShaderClassColor
-            MixinReference: ComputeColorFrame
-            Generics: 
-                amplitude: !ComputeColorParameterFloat
-                    Value: 5.0
+            MixinReference: ComputeColorTemperature
+            Generics:
+                7647e8582c51a132f3645222468ed892~temperature: !ComputeColorParameterFloat
+                    Value: 0.0
             CompositionNodes: {}
         Intensity: !ComputeFloat
-            Value: 1.0
+            Value: 50.0
     Overrides:
         UVScale: {X: 1.0, Y: 1.0}
 Layers: {}

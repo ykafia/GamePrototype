@@ -21,20 +21,26 @@ namespace FPSgame.Chemistry
                 cooldown = (cooldown - (float)Game.UpdateTime.Elapsed.TotalSeconds > 0) ? cooldown - (float)Game.UpdateTime.Elapsed.TotalSeconds : 0;
             else
             {
-                var numCollision = Entity.Get<RigidbodyComponent>().Collisions.Count;
-                foreach (var collision in Entity.Get<RigidbodyComponent>().Collisions)
-                {
-                    var temp = Entity.Scene.Entities.First(e => e.Get<ThermalConductionScript>() != null);
-                    if (temp != null)
-                    {
-                        var thermB = temp.Get<ThermalConductionScript>();
-                        if (thermB.Temperature > Temperature)
-                            Temperature += thermB.RadiateHeat();
-                        else
-                            thermB.Temperature += RadiateHeat();
-                        
-                    }
-                }
+                var collisions = Entity.Get<RigidbodyComponent>().Collisions;
+                var numCollisions = collisions.Count;
+                Entity
+                    .Scene
+                    .Entities
+                    .Where(e => e.Get<RigidbodyComponent>() != null && e.Get<ThermalConductionScript>() != null)
+                    .AsParallel()
+                    .ForAll(
+                        e => 
+                        {
+                            
+                            var thermB = e.Get<ThermalConductionScript>();
+                            if (thermB.Temperature > Temperature)
+                                Temperature += thermB.RadiateHeat();
+                            else
+                                thermB.Temperature += RadiateHeat();
+
+                        }
+                    );
+                
             }
 
         }

@@ -21,6 +21,7 @@ namespace FPSgame
                 .Where(e => e.Get<RigidbodyComponent>() != null)
                 .AsParallel()
                 .ForAll(e => e.Get<RigidbodyComponent>().Friction = FrictionForAll);
+
         }
     }
 }

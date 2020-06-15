@@ -55,6 +55,7 @@ Hierarchy:
         - ref!! 5a227b5d-5ddc-4a35-8b34-2c0842e06a04
         - ref!! 8561cc0f-afd9-42c8-b7ff-e232aa754599
         - ref!! d73ea548-967b-4c34-a869-5721b4dae5a6
+        - ref!! f51b4473-133d-4435-9603-6bac86a4efc7
     Parts:
         -   Entity:
                 Id: 033850a8-7be8-422b-b34f-bbc83ec83597
@@ -558,7 +559,8 @@ Hierarchy:
                     faca1631e9b3a24997a6e1832c02baf6: !ModelComponent
                         Id: 3116cafa-b3e9-49a2-97a6-e1832c02baf6
                         Model: c6a378f9-8770-4f2b-a8b6-befc170186ea:Models/BoxA
-                        Materials: {}
+                        Materials:
+                            c1825da66fcd45e4ba5c4d9ed42aa561~1: 0fa09de7-ffd4-4a1f-a648-e5c54ea6ef3d:Materials/FrameA
                     0c47f45154739545829ea3442ddaa65f: !RigidbodyComponent
                         Id: 51f4470c-7354-4595-829e-a3442ddaa65f
                         CanSleep: false
@@ -821,7 +823,8 @@ Hierarchy:
                     faca1631e9b3a24997a6e1832c02baf6: !ModelComponent
                         Id: 0301eae2-7de9-4f54-a07b-a9d0a9d352b1
                         Model: c6a378f9-8770-4f2b-a8b6-befc170186ea:Models/BoxA
-                        Materials: {}
+                        Materials:
+                            a41891fe386642943178e22082f0dab4~1: 0fa09de7-ffd4-4a1f-a648-e5c54ea6ef3d:Materials/FrameA
                     0c47f45154739545829ea3442ddaa65f: !RigidbodyComponent
                         Id: ed67886c-c8e3-4f14-a692-a4aa374c56d8
                         CanSleep: false
@@ -2041,7 +2044,8 @@ Hierarchy:
                     c5fb935afd3f0046b45d05fdc2409d10: !ModelComponent
                         Id: 5a93fbc5-3ffd-4600-b45d-05fdc2409d10
                         Model: eef9376b-c565-464b-b1f8-dde16315a219:Models/BoxE
-                        Materials: {}
+                        Materials:
+                            733ab266720a7573918dd590b70dafa6~1: ddcdab1b-d081-4674-b285-cc55e5eee99a:Materials/MaskD
                     b5d8a39cf4f10d4594366a9703e4388b: !RigidbodyComponent
                         Id: 9ca3d8b5-f1f4-450d-9436-6a9703e4388b
                         CanSleep: false
@@ -2256,7 +2260,8 @@ Hierarchy:
                     c5fb935afd3f0046b45d05fdc2409d10: !ModelComponent
                         Id: 3922b117-723e-46bc-a2f8-e80f0d15e8e0
                         Model: eef9376b-c565-464b-b1f8-dde16315a219:Models/BoxE
-                        Materials: {}
+                        Materials:
+                            46c37a97cb5dc817ab5d390208918ac3~1: ddcdab1b-d081-4674-b285-cc55e5eee99a:Materials/MaskD
                     b5d8a39cf4f10d4594366a9703e4388b: !RigidbodyComponent
                         Id: 23a86426-f0e7-4874-9274-609d8fb4ec24
                         CanSleep: false
@@ -2397,7 +2402,8 @@ Hierarchy:
                     faca1631e9b3a24997a6e1832c02baf6: !ModelComponent
                         Id: 21860fe9-1dd4-4880-aa1e-068c25e79cd4
                         Model: c6a378f9-8770-4f2b-a8b6-befc170186ea:Models/BoxA
-                        Materials: {}
+                        Materials:
+                            94ac633feebe477928367ad4eb7c73f1~1: 0fa09de7-ffd4-4a1f-a648-e5c54ea6ef3d:Materials/FrameA
                     0c47f45154739545829ea3442ddaa65f: !RigidbodyComponent
                         Id: accea782-8df6-4071-b492-cb4cca4e3001
                         CanSleep: false
@@ -2708,7 +2714,8 @@ Hierarchy:
                     c5fb935afd3f0046b45d05fdc2409d10: !ModelComponent
                         Id: 6cee65bb-fa8b-45de-8ebf-83d9867e29d2
                         Model: eef9376b-c565-464b-b1f8-dde16315a219:Models/BoxE
-                        Materials: {}
+                        Materials:
+                            cab852e3cbb8f4b9d47bb3260947ffa9~1: ddcdab1b-d081-4674-b285-cc55e5eee99a:Materials/MaskD
                     b5d8a39cf4f10d4594366a9703e4388b: !RigidbodyComponent
                         Id: fdc5333d-36c5-4982-aa1d-537f8c5ef9e2
                         CanSleep: false
@@ -2958,7 +2965,8 @@ Hierarchy:
                     a2a7c8831783434a9a49e615d0aa9897: !ModelComponent
                         Id: 83c8a7a2-8317-4a43-9a49-e615d0aa9897
                         Model: 4bb014d3-0e27-4b0c-b8a5-acfbbe7d211d:Models/BoxF
-                        Materials: {}
+                        Materials:
+                            3cfffd4a5b4278222d1b97ccf0a4d397~1: 0fa09de7-ffd4-4a1f-a648-e5c54ea6ef3d:Materials/FrameA
                     81ce6d5479e44d4f9250ca52dc991e16: !RigidbodyComponent
                         Id: 546dce81-e479-4f4d-9250-ca52dc991e16
                         CanSleep: false
@@ -3421,7 +3429,8 @@ Hierarchy:
                     a2a7c8831783434a9a49e615d0aa9897: !ModelComponent
                         Id: 80f1418d-f817-4d7b-8c30-9859476f999f
                         Model: 4bb014d3-0e27-4b0c-b8a5-acfbbe7d211d:Models/BoxF
-                        Materials: {}
+                        Materials:
+                            72bff7c9ddc59ca8a9c0fc48d9b9a8da~1: 0fa09de7-ffd4-4a1f-a648-e5c54ea6ef3d:Materials/FrameA
                     81ce6d5479e44d4f9250ca52dc991e16: !RigidbodyComponent
                         Id: 62726783-05b0-46fa-b5c0-9f468d32e913
                         CanSleep: false
@@ -3689,7 +3698,8 @@ Hierarchy:
                     a2a7c8831783434a9a49e615d0aa9897: !ModelComponent
                         Id: bc232068-e6b3-4539-9fb7-a8ce703b3f43
                         Model: 4bb014d3-0e27-4b0c-b8a5-acfbbe7d211d:Models/BoxF
-                        Materials: {}
+                        Materials:
+                            41e81f2a20969d8eacbdd16a2e0d13fc~1: 0fa09de7-ffd4-4a1f-a648-e5c54ea6ef3d:Materials/FrameA
                     81ce6d5479e44d4f9250ca52dc991e16: !RigidbodyComponent
                         Id: 6d80131e-3290-447e-b37a-29ff2d9b25e8
                         CanSleep: false
@@ -3712,6 +3722,43 @@ Hierarchy:
                                 Size: {X: 1.0, Y: 1.0, Z: 1.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+        -   Folder: ShootTheCubes
+            Entity:
+                Id: f51b4473-133d-4435-9603-6bac86a4efc7
+                Name: Lever
+                Components:
+                    2b2ee4f1e62894c2a36a7721d1cb5baa: !TransformComponent
+                        Id: 444e8bd8-0f2a-43ac-85cd-1c2c11c7c70f
+                        Position: {X: -16.0, Y: 1.3, Z: -12.0}
+                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                        Children: {}
+                    b9fe19c6882be9b00ff9fe71fc80fd4b: !RigidbodyComponent
+                        Id: c35725f7-7497-4736-9fcc-743864cec26e
+                        CanCollideWith: StaticFilter
+                        CanSleep: false
+                        Restitution: 0.0
+                        Friction: 0.5
+                        RollingFriction: 0.0
+                        CcdMotionThreshold: 0.0
+                        CcdSweptSphereRadius: 0.0
+                        IsTrigger: false
+                        IsKinematic: true
+                        Mass: 1.0
+                        LinearDamping: 0.0
+                        AngularDamping: 0.0
+                        OverrideGravity: false
+                        Gravity: {X: 0.0, Y: 0.0, Z: 0.0}
+                        NodeName: null
+                        ColliderShapes:
+                            2e017ecbd7e0a037576f95d6730666e0: !BoxColliderShapeDesc
+                                Is2D: false
+                                Size: {X: 0.1, Y: 0.1, Z: 0.1}
+                                LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
+                                LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    8c8b712310f5ec76737f0e8504c6ffb8: !FPSgame.MovePhysicsHandle,FPSgame.Game
+                        Id: 75998076-49e4-4cd0-b3a0-52a5ad17e707
+                        target: ref!! 1c16ce32-59b1-4691-9465-974111982f67
         -   Entity:
                 Id: f564497c-3e80-429f-b01d-95daf93e0d9c
                 Name: Box3x1x1
