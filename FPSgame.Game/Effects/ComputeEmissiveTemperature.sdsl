@@ -1,4 +1,4 @@
-﻿namespace FPSGame
+﻿namespace FPSgame
 {
     shader ComputeEmissiveTemperature : ComputeColor
     {

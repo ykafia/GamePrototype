@@ -4,7 +4,7 @@ namespace FPSgame.Windows
 {
     class FPSgameApp
     {
-        static void Main(string[] args)
+        static void Main(string[] _)
         {
             using (var game = new Game())
             {

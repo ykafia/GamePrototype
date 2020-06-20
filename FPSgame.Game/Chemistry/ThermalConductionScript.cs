@@ -9,7 +9,7 @@ using System.Linq;
 using Stride.Rendering;
 using Stride.Rendering.Materials;
 using FPSgame;
-using FPSGame;
+using Stride.Rendering.Materials.ComputeColors;
 
 namespace FPSgame.Chemistry
 {
@@ -48,13 +48,40 @@ namespace FPSgame.Chemistry
             }
             var material = Entity.Get<ModelComponent>().GetMaterial(0);
             material.Passes[0].Parameters.Set(ComputeEmissiveTemperatureKeys.Temperature,Temperature);
-
-
         }
         public float RadiateHeat()
         {
             Temperature -= ThermalConductivity * cooldown;
             return ThermalConductivity * cooldown;
+        }
+        public void HeatUp(float calor)
+        {
+            Temperature += ThermalConductivity * calor;
+            static float getSign(float i)
+            {
+                if (i > 0)
+                    return 1;
+                else if (i < 0)
+                    return -1;
+                else
+                    return 0;
+            }
+
+            static float getAbsolute(float i)
+            {
+                return getSign(i) switch
+                {
+                    1 => i,
+                    -1 => -i,
+                    _ => 0
+                };
+            }
+            static float normalize(float i)
+            {
+                if (i > 100) return 100;
+                else return i;
+            }
+            Temperature = getSign(Temperature) * normalize(getAbsolute(Temperature));
         }
     }
 }

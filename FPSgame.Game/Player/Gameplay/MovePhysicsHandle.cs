@@ -8,7 +8,7 @@ using Stride.Input;
 using Stride.Engine;
 using Stride.Physics;
 
-namespace FPSgame
+namespace FPSgame.Player.Gameplay
 {
     public class MovePhysicsHandle : SyncScript
     {

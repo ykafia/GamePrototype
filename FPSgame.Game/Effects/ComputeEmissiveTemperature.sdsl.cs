@@ -14,7 +14,7 @@ using Stride.Shaders;
 using Stride.Core.Mathematics;
 using Buffer = Stride.Graphics.Buffer;
 
-namespace FPSGame
+namespace FPSgame
 {
     public static partial class ComputeEmissiveTemperatureKeys
     {

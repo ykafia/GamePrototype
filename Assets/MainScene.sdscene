@@ -1309,7 +1309,41 @@ Hierarchy:
                         Id: 79c1cebd-d690-4e7f-b9d1-d3a9197c95a2
                         Name: null
                         Projection: Perspective
+                        VerticalFieldOfView: 55.0
                         Slot: f1ef5817-0725-4b1a-abc9-845d101ec0e6
+                    2e0dd7c9335873babe45f4a00e794fa7: !FPSgame.FpsCamera,FPSgame.Game
+                        Id: d1fb55a8-74f4-4f7e-8f73-0196dbafbef6
+                        RotationSpeed: 2.355
+                        RotationAdaptationSpeed: 5.0
+                    921b7c99e8d440a122ab510a40d09f65: !FPSgame.EffectController,FPSgame.Game
+                        Id: 9798e762-6525-4e13-981a-fa5538cae231
+                        TriggerGroup:
+                            Name: Basic Triggers
+                            TriggerEvents:
+                                172f36d5ea742911a3732a9a04a082ba:
+                                    Name: MuzzleFlash
+                                    SourcePrefab: e17ddf92-c58c-4bf9-b61d-0137eeda5c61:VFXPrefabs/vfx-RichMuzzleFlash
+                                    FollowEntity: false
+                                    Duration: 3.0
+                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                a1cccd6db0f213cd3940d8b05e6c8913:
+                                    Name: BulletImpact
+                                    SourcePrefab: 65a8bbc8-38a8-4980-9554-267506f5becd:VFXPrefabs/vfx-RichBulletImpact
+                                    FollowEntity: false
+                                    Duration: 3.0
+                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
+                                6f4a2a423d93d2cc1b0d2114d14bd52f:
+                                    Name: DamagedTrail
+                                    SourcePrefab: ce8f7684-4068-444b-83c2-c3320fd12789:VFXPrefabs/vfx-DamagedTrail
+                                    FollowEntity: false
+                                    Duration: 3.0
+                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
+                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
         -   Folder: null
             Entity:
                 Id: 4e37a152-95ce-4314-b964-6c6bc552c136
@@ -2566,6 +2600,25 @@ Hierarchy:
                                 Radius: 0.4
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                    09e464e0e9f3167698137e3ea9b7033c: !FPSgame.Player.PlayerController,FPSgame.Game
+                        Id: 12f51436-4e88-40d3-bbd3-940f4e6e1668
+                        MaxRunSpeed: 5.0
+                    37e1f5da6ca3515a40e1446cc9ea24bf: !FPSgame.Player.PlayerInput,FPSgame.Game
+                        Id: 37b34374-0e88-4a48-a939-7c246784cf89
+                        Priority: -1000
+                        DeadZone: 0.25
+                        Camera: ref!! 79c1cebd-d690-4e7f-b9d1-d3a9197c95a2
+                        MouseSensitivity: 100.0
+                        KeysLeft:
+                            50e9357e2a727abe284571cb2c2aad22: Q
+                        KeysRight:
+                            1094ad723c1ea0e7ec13b14e6c574c88: D
+                        KeysUp:
+                            905aec90a2c2897e1ac2a661d0a43820: Z
+                        KeysDown:
+                            46bcbefc85fb67160659c083c742fae5: S
+                        KeysReload:
+                            ba56e320a692473d1be7b7955f28eebf: C
         -   Folder: Ground/Ceiling
             Entity:
                 Id: 9e3e26b2-925d-4a78-b2f4-a38462eaeabc
@@ -3236,6 +3289,9 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
+                    0d51126923b01da4027d376fd77ffef4: !FPSgame.InitPhysics,FPSgame.Game
+                        Id: 08ec8941-af3b-47c3-8589-b49a42f41a14
+                        FrictionForAll: 1.0
         -   Folder: null
             Entity:
                 Id: d8495a2a-d8e2-4916-9cbb-57a26f0d5b3d
@@ -3637,7 +3693,7 @@ Hierarchy:
                 Components:
                     2b2ee4f1e62894c2a36a7721d1cb5baa: !TransformComponent
                         Id: 444e8bd8-0f2a-43ac-85cd-1c2c11c7c70f
-                        Position: {X: 0.0, Y: -0.1, Z: -1.5}
+                        Position: {X: 0.0, Y: -0.1, Z: -1.6}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -3664,8 +3720,8 @@ Hierarchy:
                                 Size: {X: 0.1, Y: 0.1, Z: 0.1}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    8c8b712310f5ec76737f0e8504c6ffb8: !FPSgame.MovePhysicsHandle,FPSgame.Game
-                        Id: 75998076-49e4-4cd0-b3a0-52a5ad17e707
+                    f8c3a004adea0e0feb92a43a76ec14bb: !FPSgame.Player.Gameplay.MovePhysicsHandle,FPSgame.Game
+                        Id: 62c151f0-edb5-4744-8bea-e439f73bbdd1
                         MaxPickUpDistance: 3.0
         -   Entity:
                 Id: f564497c-3e80-429f-b01d-95daf93e0d9c
