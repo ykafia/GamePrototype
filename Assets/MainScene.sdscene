@@ -7,7 +7,6 @@ Offset: {X: 0.0, Y: 0.0, Z: 0.0}
 Hierarchy:
     RootParts:
         - ref!! 96a9e8b6-3a2d-4d58-83b0-86ce04c80379
-        - ref!! 2b5698d3-f8fd-41ca-822c-29fc288e6e7d
         - ref!! 6d2f4791-6113-4783-bbfa-0c268be80a53
         - ref!! fa3c8861-808f-4236-b336-5a5bae55b802
         - ref!! 77465422-7cf5-4b5f-b2ca-622b7562ba25
@@ -55,7 +54,6 @@ Hierarchy:
         - ref!! 5a227b5d-5ddc-4a35-8b34-2c0842e06a04
         - ref!! 8561cc0f-afd9-42c8-b7ff-e232aa754599
         - ref!! d73ea548-967b-4c34-a869-5721b4dae5a6
-        - ref!! f51b4473-133d-4435-9603-6bac86a4efc7
     Parts:
         -   Entity:
                 Id: 033850a8-7be8-422b-b34f-bbc83ec83597
@@ -938,23 +936,6 @@ Hierarchy:
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             4eecb3c27affe3478bcc584553d59e41: ref!! 0eee13f4-0797-4383-80a4-0343d93b395e
-        -   Folder: Lights
-            Entity:
-                Id: 2b5698d3-f8fd-41ca-822c-29fc288e6e7d
-                Name: Ambient light
-                Components:
-                    53601749b70e4446921511393e38a000: !TransformComponent
-                        Id: 49176053-0eb7-4644-9215-11393e38a000
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    90bb395a55a1e34bb46aa14806033dd7: !LightComponent
-                        Id: 5a39bb90-a155-4be3-b46a-a14806033dd7
-                        Enabled: false
-                        Type: !LightAmbient
-                            Color: !ColorRgbProvider
-                                Value: {R: 1.0, G: 1.0, B: 1.0}
         -   Folder: Ground/Ceiling
             Entity:
                 Id: 2b6c1daa-7fc9-4a33-9781-5ad48159e912
@@ -1323,62 +1304,12 @@ Hierarchy:
                         Children:
                             363dfd50bc1faf4cb198d55bc4959a6c: ref!! 50fd3d36-1fbc-4caf-b198-d55bc4959a6c
                             1fe64d64198b4543bfc6b549158775e4: ref!! 644de61f-8b19-4345-bfc6-b549158775e4
+                            7f1b21741fbdd92fbe3613f3198e09db: ref!! 444e8bd8-0f2a-43ac-85cd-1c2c11c7c70f
                     bdcec17990d67f4eb9d1d3a9197c95a2: !CameraComponent
                         Id: 79c1cebd-d690-4e7f-b9d1-d3a9197c95a2
                         Name: null
                         Projection: Perspective
                         Slot: f1ef5817-0725-4b1a-abc9-845d101ec0e6
-                    9731d2d0203d33203b3b5b03b5d47f6f: !FPSgame.Player.WeaponScript,FPSgame.Game
-                        Id: 6fb5bd5b-3882-4f0f-a6c8-2975b21d1c82
-                        MaxShootDistance: 100.0
-                        ShootImpulse: 5.0
-                        Cooldown: 0.3
-                        ReloadCooldown: 2.0
-                        RemainingBullets: ref!! 722ddea3-2ffa-4dc2-83c3-44dedd18fc64
-                    c995e23935bb3ab7f61227ebf37c4136: !FPSgame.FpsCamera,FPSgame.Game
-                        Id: edb35084-3395-4802-b285-71d328fcf401
-                        RotationSpeed: 1.0
-                        RotationAdaptationSpeed: 5.0
-                    d23a3a8137177a7b80106119ed8b30b1: !FPSgame.EffectController,FPSgame.Game
-                        Id: 32dd5610-ea1c-4978-8ed1-96c7cf3e08ea
-                        TriggerGroup:
-                            Name: WeaponFired
-                            TriggerEvents:
-                                668a929ef6944cfd02b7c83f5f51494e:
-                                    Name: MuzzleFlash
-                                    SourcePrefab: e17ddf92-c58c-4bf9-b61d-0137eeda5c61:VFXPrefabs/vfx-RichMuzzleFlash
-                                    FollowEntity: false
-                                    Duration: 3.0
-                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                                8c9d7f045f2b1c21950f9ba5946861f5:
-                                    Name: BulletImpact
-                                    SourcePrefab: 65a8bbc8-38a8-4980-9554-267506f5becd:VFXPrefabs/vfx-RichBulletImpact
-                                    FollowEntity: false
-                                    Duration: 3.0
-                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                                4c399b94f34f9f9c563a5268213ca309:
-                                    Name: DamagedTrail
-                                    SourcePrefab: ce8f7684-4068-444b-83c2-c3320fd12789:VFXPrefabs/vfx-DamagedTrail
-                                    FollowEntity: false
-                                    Duration: 3.0
-                                    Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                                    Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                                    Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                    f6e907bdc0a24cf3c8473138bbea78ff: !FPSgame.Player.GravityForceScript,FPSgame.Game
-                        Id: 8aaa7eac-6232-4138-8263-6fbeaa7dfcda
-                        ForceDirection: Push
-                        PullDuration: 5.0
-                        MaxPullDistance: 20.0
-                        PullImpulse: 50.0
-                        Cooldown: 1.0
-                    338e92b66c07d443a838c3dadb786e4a: !FPSgame.Player.SimplePickUpScript,FPSgame.Game
-                        Id: e5b36585-38fb-4beb-aa01-937ad6a15019
-                        MaxPickUpDistance: 2.0
-                        Height: 1.0
         -   Folder: null
             Entity:
                 Id: 4e37a152-95ce-4314-b964-6c6bc552c136
@@ -2210,7 +2141,6 @@ Hierarchy:
                                 PartitionMode: !LightDirectionalShadowMap.PartitionLogarithmic {}
                                 ComputeTransmittance: false
                                 BiasParameters: {}
-                        Intensity: 5.0
         -   Folder: null
             Entity:
                 Id: 6f59672b-d4ca-4ed6-8b91-e33012e5490d
@@ -2636,24 +2566,6 @@ Hierarchy:
                                 Radius: 0.4
                                 LocalOffset: {X: 0.0, Y: 0.95, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    6ec67138ca4b20cd9154c92cdf91e076: !FPSgame.Player.PlayerController,FPSgame.Game
-                        Id: 4b87ed7e-f2a8-4715-80af-e31cc28e7bcc
-                        MaxRunSpeed: 5.0
-                    22b0384a9f7cb9c905bdc171f1bd96b5: !FPSgame.Player.PlayerInput,FPSgame.Game
-                        Id: 41fd9bdd-71b9-4ee0-8c72-c2beda49c34e
-                        Priority: -1000
-                        DeadZone: 0.25
-                        Camera: ref!! 79c1cebd-d690-4e7f-b9d1-d3a9197c95a2
-                        MouseSensitivity: 5.0
-                        KeysLeft:
-                            1e56f4905ab02658987f5a2fedb64956: Q
-                        KeysRight:
-                            c669bb99f02309efd0953b07f79075d9: D
-                        KeysUp:
-                            3d8ba60f445649bcb76c7d78ee895d20: Z
-                        KeysDown:
-                            e4fc9f0b1481a3bd3fcb7d77b86a549c: S
-                        KeysReload: {}
         -   Folder: Ground/Ceiling
             Entity:
                 Id: 9e3e26b2-925d-4a78-b2f4-a38462eaeabc
@@ -3324,9 +3236,6 @@ Hierarchy:
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
-                    80bedf4804a053b9d405e4f3b2a60485: !FPSgame.InitPhysics,FPSgame.Game
-                        Id: 5a7ada99-9486-44c2-b01a-64f8a42b7d94
-                        FrictionForAll: 0.0
         -   Folder: null
             Entity:
                 Id: d8495a2a-d8e2-4916-9cbb-57a26f0d5b3d
@@ -3722,14 +3631,13 @@ Hierarchy:
                                 Size: {X: 1.0, Y: 1.0, Z: 1.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-        -   Folder: ShootTheCubes
-            Entity:
+        -   Entity:
                 Id: f51b4473-133d-4435-9603-6bac86a4efc7
                 Name: Lever
                 Components:
                     2b2ee4f1e62894c2a36a7721d1cb5baa: !TransformComponent
                         Id: 444e8bd8-0f2a-43ac-85cd-1c2c11c7c70f
-                        Position: {X: -16.0, Y: 1.3, Z: -12.0}
+                        Position: {X: 0.0, Y: -0.1, Z: -1.5}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -3758,7 +3666,7 @@ Hierarchy:
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                     8c8b712310f5ec76737f0e8504c6ffb8: !FPSgame.MovePhysicsHandle,FPSgame.Game
                         Id: 75998076-49e4-4cd0-b3a0-52a5ad17e707
-                        target: ref!! 1c16ce32-59b1-4691-9465-974111982f67
+                        MaxPickUpDistance: 3.0
         -   Entity:
                 Id: f564497c-3e80-429f-b01d-95daf93e0d9c
                 Name: Box3x1x1
@@ -3806,7 +3714,7 @@ Hierarchy:
                         Intensity: 0.75
                     8033c195faf34b2aacd30afd3844aa42: !BackgroundComponent
                         Id: f09ed5a0-01ed-41e3-b358-fb3df7fc27cd
-                        Texture: 892e44b7-bc49-4ae6-9c6d-dfc1d28b2554:Skybox Texture
+                        Texture: 61a62c9c-0c9b-4aa3-9b4f-9bb54cc80830:MyMap
                         Intensity: 3.0
         -   Entity:
                 Id: fb86557c-418f-4043-be2b-68c06a6e8da3

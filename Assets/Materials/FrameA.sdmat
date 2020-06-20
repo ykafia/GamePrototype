@@ -46,12 +46,9 @@ Attributes:
         SpecularCavity: !ComputeFloat
             Value: 1.0
     Emissive: !MaterialEmissiveMapFeature
-        EmissiveMap: !ComputeShaderClassColor
-            MixinReference: ComputeColorTemperature
-            Generics:
-                7647e8582c51a132f3645222468ed892~temperature: !ComputeColorParameterFloat
-                    Value: 0.0
-            CompositionNodes: {}
+        Enabled: false
+        EmissiveMap: !ComputeColor
+            Value: {R: 0.0, G: 0.0, B: 0.0, A: 1.0}
         Intensity: !ComputeFloat
             Value: 50.0
     Overrides:

@@ -1,11 +1,31 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 16
+# Visual Studio Version 16
 VisualStudioVersion = 16.0.0.0
 MinimumVisualStudioVersion = 16.0.0.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSgame.Windows", "FPSgame.Windows\FPSgame.Windows.csproj", "{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FPSgame.Windows", "FPSgame.Windows\FPSgame.Windows.csproj", "{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FPSgame.Game", "FPSgame.Game\FPSgame.Game.csproj", "{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FPSgame.Game", "FPSgame.Game\FPSgame.Game.csproj", "{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}"
 EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86630770-EB42-4FBE-8FF3-A6B32B5BC6B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150773BE-857B-4FB3-9D1B-C9B9F72BFF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07057E1F-5D38-47B6-B80C-BF6B9DF66251}
+	EndGlobalSection
 EndGlobal

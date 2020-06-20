@@ -6,6 +6,10 @@ using Stride.Engine.Events;
 using Stride.Physics;
 using Stride.Input;
 using System.Linq;
+using Stride.Rendering;
+using Stride.Rendering.Materials;
+using FPSgame;
+using FPSGame;
 
 namespace FPSgame.Chemistry
 {
@@ -14,7 +18,7 @@ namespace FPSgame.Chemistry
         public float ThermalConductivity { get; set; } = 1.0f;
         public float Temperature { get; set; } = 25f;
 
-        private float cooldown = ThermalSimulation.timestep;
+        private float cooldown = ThermalSimulation.Timestep;
         public override void Update()
         {
             if (cooldown > 0)
@@ -42,6 +46,9 @@ namespace FPSgame.Chemistry
                     );
                 
             }
+            var material = Entity.Get<ModelComponent>().GetMaterial(0);
+            material.Passes[0].Parameters.Set(ComputeEmissiveTemperatureKeys.Temperature,Temperature);
+
 
         }
         public float RadiateHeat()

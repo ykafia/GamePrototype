@@ -12,4 +12,16 @@
     <PackageReference Include="Stride.Physics" Version="4.0.0.1-beta03-1036" PrivateAssets="contentfiles;analyzers" />
     <PackageReference Include="Stride.UI" Version="4.0.0.1-beta03-1036" PrivateAssets="contentfiles;analyzers" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Effects\ComputeEmissiveTemperature.sdsl.cs">
+      <DesignTime>True</DesignTime>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Effects\ComputeEmissiveTemperature.sdsl">
+      <LastGenOutput>ComputeEmissiveTemperature.sdsl.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
 </Project>

@@ -13,43 +13,77 @@ namespace FPSgame
     public class MovePhysicsHandle : SyncScript
     {
 
-        public Entity target;
-        public override void Start()
+        private Entity target;
+        private Constraint currentConstraint;
+
+        private bool isHolding = false;
+
+        public float MaxPickUpDistance = 3;
+
+        // Declared public member fields and properties will show in the game studio
+        public override void Update()
+        {
+            if (Input.IsKeyPressed(Keys.R))
+            {
+
+                if (!isHolding)
+                {
+
+                    var raycastStart = Entity.Transform.Parent.WorldMatrix.TranslationVector;
+                    var forward = Entity.Transform.Parent.WorldMatrix.Forward;
+                    var raycastEnd = raycastStart + forward * MaxPickUpDistance;
+
+                    var result = this.GetSimulation().Raycast(raycastStart, raycastEnd);
+
+
+                    if (result.Succeeded && result.Collider != null)
+                    {
+                        if (result.Collider is RigidbodyComponent rigidBody)
+                        {
+
+                            target = Entity.Scene.Entities.First(e => e.Get<RigidbodyComponent>() == rigidBody);
+                            isHolding = true;
+                            CreateConstrait();
+
+                        }
+                    }
+                }
+                else
+                {
+                    RemoveConstrait();
+                    target = null;
+                    isHolding = false;
+                }
+            }
+        }
+
+
+        public void CreateConstrait()
         {
             var rb = Entity.Get<RigidbodyComponent>();
             var trb = target.Get<RigidbodyComponent>();
-            rb.LinearFactor = Vector3.Zero;
-            rb.AngularFactor = Vector3.Zero;
-            trb.LinearFactor = Vector3.One * 2;
-            trb.AngularFactor = Vector3.One * 0.1f;
+            trb.LinearFactor = Vector3.One * 0.8f;
+            trb.AngularFactor = Vector3.One * 0.01f;
 
-            var currentConstraint = Simulation.CreateConstraint(ConstraintTypes.ConeTwist, rb, trb,
-                Matrix.Identity, Matrix.Translation(new Vector3(0, 0.1f, 0)));
+            currentConstraint = 
+                Simulation.CreateConstraint(
+                    ConstraintTypes.ConeTwist, 
+                    rb, 
+                    trb,
+                    Matrix.Identity, 
+                    Matrix.Identity);
             this.GetSimulation().AddConstraint(currentConstraint);
 
             var coneTwist = (ConeTwistConstraint)currentConstraint;
             coneTwist.SetLimit(0.5f, 0.5f, 0.5f);
         }
 
-        // Declared public member fields and properties will show in the game studio
-        public override void Update()
+        public void RemoveConstrait()
         {
-           if(Input.IsKeyDown(Keys.Up))
-           {
-               Entity.Transform.Position -= Vector3.UnitZ * 2.0f * (float) Game.UpdateTime.Elapsed.TotalSeconds;
-           }
-           if(Input.IsKeyDown(Keys.Right))
-           {
-               Entity.Transform.Position += Vector3.UnitX * 2.0f * (float) Game.UpdateTime.Elapsed.TotalSeconds;
-           }
-           if(Input.IsKeyDown(Keys.Left))
-           {
-               Entity.Transform.Position -= Vector3.UnitX * 2.0f * (float) Game.UpdateTime.Elapsed.TotalSeconds;
-           }
-           if(Input.IsKeyDown(Keys.Down))
-           {
-               Entity.Transform.Position += Vector3.UnitZ * 2.0f * (float) Game.UpdateTime.Elapsed.TotalSeconds;
-           }
+            var trb = target.Get<RigidbodyComponent>();
+            trb.LinearFactor = Vector3.One;
+            trb.AngularFactor = Vector3.One;
+            this.GetSimulation().RemoveConstraint(currentConstraint);
         }
     }
 }

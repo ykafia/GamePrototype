@@ -1,0 +1,22 @@
+﻿namespace FPSGame
+{
+    shader ComputeEmissiveTemperature : ComputeColor
+    {
+        cbuffer PerMaterial
+        {
+            stage float Temperature = 1.0f;
+        }
+        override float4 Compute()
+        {
+            if(Temperature<100 && Temperature>0)
+            {
+                return float4(Temperature/100, 0, 0, Temperature/100);
+            }
+            else if (Temperature>-100 && Temperature>0)
+            {
+                return float4(0,0, Temperature/100, Temperature/100);
+            }
+            return float4(0, 0, 0, 0);
+        }
+    };
+}

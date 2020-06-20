@@ -16,6 +16,6 @@ namespace FPSgame.Chemistry
     }
     public class ThermalSimulation
     {
-        public static float timestep = 1;
+        public static float Timestep = 1;
     }
 }

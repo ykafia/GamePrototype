@@ -1,8 +1,0 @@
-shader ComputeColorFrame<float amplitude> : ComputeColor, Texturing
-{
-    override float4 Compute()
-    {
-        float2 result = streams.TexCoord;
-        return float4(1.0,result,1.0);
-    }
-};
