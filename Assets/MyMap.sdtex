@@ -1,7 +1,0 @@
-!Texture
-Id: 61a62c9c-0c9b-4aa3-9b4f-9bb54cc80830
-SerializedVersion: {Stride: 2.0.0.0}
-Tags: []
-Source: !file ../../../../Documents/BlenderResources/MyMap.dds
-Type: !ColorTextureType
-    ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

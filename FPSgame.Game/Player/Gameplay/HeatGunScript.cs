@@ -20,7 +20,7 @@ namespace FPSgame.Player.Gameplay
         // Declared public member fields and properties will show in the game studio
         public override void Update()
         {
-            if (Input.IsKeyPressed(Keys.R))
+            if (Input.IsKeyDown(Keys.R))
             {
 
 
@@ -29,14 +29,16 @@ namespace FPSgame.Player.Gameplay
                 var raycastEnd = raycastStart + forward * MaxHeatUpDistance;
 
                 var result = this.GetSimulation().Raycast(raycastStart, raycastEnd);
-
+                
 
                 if (result.Succeeded && result.Collider != null)
                 {
                     if (result.Collider is RigidbodyComponent rigidBody)
                     {
                         var target = Entity.Scene.Entities.First(e => e.Get<RigidbodyComponent>() == rigidBody && e.Get<ThermalConductionScript>()!=null);
-                        target?.Get<ThermalConductionScript>().HeatUp(CalorPerSec * (float)Game.UpdateTime.Elapsed.TotalSeconds);
+                        if(target != null)
+                            DebugText.Print("Temperature target : " + target, new Int2(x: 50, y: 125));
+                        target?.Get<ThermalConductionScript>()?.HeatUp(CalorPerSec * (float)Game.UpdateTime.Elapsed.TotalSeconds);
                     }
                 }
             }

@@ -15,4 +15,5 @@ OutputGroupDirectories: {}
 ExplicitFolders: []
 Bundles: []
 TemplateFolders: []
-RootAssets: []
+RootAssets:
+    - 4ffc96b4-8837-40f2-aabd-c223cdf46ecb:StarBox

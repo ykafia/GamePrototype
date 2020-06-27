@@ -60,7 +60,8 @@ namespace FPSgame.Player.Gameplay
 
         public void CreateConstrait()
         {
-            var rb = Entity.Get<RigidbodyComponent>();
+            var handle = Entity.FindChild("Lever");
+            var rb = handle.Get<RigidbodyComponent>();
             var trb = target.Get<RigidbodyComponent>();
             trb.LinearFactor = Vector3.One * 0.8f;
             trb.AngularFactor = Vector3.One * 0.01f;

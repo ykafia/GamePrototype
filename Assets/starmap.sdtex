@@ -1,7 +1,8 @@
 !Texture
-Id: 7ea188cb-5cb7-4a68-b7a9-7b915a84bbca
+Id: d2328089-7ad7-4db2-b6aa-7359ebc9a77b
 SerializedVersion: {Stride: 2.0.0.0}
 Tags: []
-Source: !file ../../../../Documents/BlenderResources/starmap.dds
+Source: !file ../../../../Documents/BlenderSkyBoxExport/DDS/StarMap.dds
+IsCompressed: false
 Type: !ColorTextureType
     ColorKeyColor: {R: 255, G: 0, B: 255, A: 255}

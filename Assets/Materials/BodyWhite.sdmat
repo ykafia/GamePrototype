@@ -12,7 +12,7 @@ Attributes:
     DiffuseModel: !MaterialDiffuseLambertModelFeature {}
     Specular: !MaterialMetalnessMapFeature
         MetalnessMap: !ComputeFloat
-            Value: 0.326415
+            Value: 1.0
     SpecularModel: !MaterialSpecularMicrofacetModelFeature
         Fresnel: !MaterialSpecularMicrofacetFresnelSchlick {}
         Visibility: !MaterialSpecularMicrofacetVisibilitySmithSchlickGGX {}
@@ -20,4 +20,25 @@ Attributes:
         Environment: !MaterialSpecularMicrofacetEnvironmentGGXLUT {}
     Overrides:
         UVScale: {X: 1.0, Y: 1.0}
+    ClearCoat: !MaterialClearCoatFeature
+        LODDistance: !ComputeFloat
+            Value: 1.0
+        BasePaintDiffuseMap: !ComputeColor
+            Value: {R: 0.0, G: 0.0, B: 0.0, A: 1.0}
+        BasePaintGlossinessMap: !ComputeFloat
+            Value: 0.0
+        MetalFlakesDiffuseMap: !ComputeColor
+            Value: {R: 0.0, G: 0.0, B: 0.0, A: 1.0}
+        MetalFlakesGlossinessMap: !ComputeFloat
+            Value: 0.0
+        MetalFlakesMetalnessMap: !ComputeFloat
+            Value: 0.0
+        MetalFlakesNormalMap: !ComputeColor
+            Value: {R: 0.0, G: 0.0, B: 0.0, A: 1.0}
+        ClearCoatGlossinessMap: !ComputeFloat
+            Value: 1.0
+        ClearCoatMetalnessMap: !ComputeFloat
+            Value: 0.0
+        OrangePeelNormalMap: !ComputeColor
+            Value: {R: 0.0, G: 0.0, B: 0.0, A: 1.0}
 Layers: {}

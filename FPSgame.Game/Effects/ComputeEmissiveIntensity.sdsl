@@ -1,0 +1,14 @@
+﻿namespace FPSgame
+{
+    shader ComputeEmissiveIntensity : ComputeColor
+    {
+        cbuffer PerMaterial
+        {
+            stage float Temperature = 0.0f;
+        }
+        override float4 Compute()
+        {
+            return Temperature*2;
+        }
+    };
+}

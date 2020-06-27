@@ -16,7 +16,7 @@ namespace FPSgame.Chemistry
     public class ThermalConductionScript : SyncScript
     {
         public float ThermalConductivity { get; set; } = 1.0f;
-        public float Temperature { get; set; } = 25f;
+        public float Temperature { get; set; } = 0f;
 
         private float cooldown = ThermalSimulation.Timestep;
         public override void Update()
@@ -30,12 +30,12 @@ namespace FPSgame.Chemistry
                 Entity
                     .Scene
                     .Entities
-                    .Where(e => e.Get<RigidbodyComponent>() != null && e.Get<ThermalConductionScript>() != null)
+                    .Where(e => e.Get<RigidbodyComponent>() != null && e.Get<ThermalConductionScript>() != null)?
                     .AsParallel()
                     .ForAll(
-                        e => 
+                        e =>
                         {
-                            
+
                             var thermB = e.Get<ThermalConductionScript>();
                             if (thermB.Temperature > Temperature)
                                 Temperature += thermB.RadiateHeat();
@@ -44,10 +44,19 @@ namespace FPSgame.Chemistry
 
                         }
                     );
-                
+
             }
             var material = Entity.Get<ModelComponent>().GetMaterial(0);
-            material.Passes[0].Parameters.Set(ComputeEmissiveTemperatureKeys.Temperature,Temperature);
+            Entity.Get<ModelComponent>()
+                .Materials
+                .AsParallel()
+                .ForAll(x => 
+                    {
+                        x.Value.Passes[0].Parameters.Set(ComputeEmissiveTemperatureKeys.Temperature, Temperature/25f);
+                        x.Value.Passes[0].Parameters.Set(ComputeEmissiveIntensityKeys.Temperature,Temperature);
+                    }
+                );
+            // material.Passes[0].Parameters.Set(ComputeEmissiveTemperatureKeys.Temperature, Temperature);
         }
         public float RadiateHeat()
         {
@@ -78,10 +87,21 @@ namespace FPSgame.Chemistry
             }
             static float normalize(float i)
             {
-                if (i > 100) return 100;
+                if (i > 25) return 25;
                 else return i;
             }
             Temperature = getSign(Temperature) * normalize(getAbsolute(Temperature));
+            // var material = Entity.Get<ModelComponent>().GetMaterial(0);
+            DebugText.Print("Temperature target (Heating up) : " + Temperature, new Int2(x: 50, y: 100));
+            Entity.Get<ModelComponent>()
+                .Materials
+                .AsParallel()
+                .ForAll(x => 
+                    {
+                        x.Value.Passes[0].Parameters.Set(ComputeEmissiveTemperatureKeys.Temperature, Temperature/25f);
+                        x.Value.Passes[0].Parameters.Set(ComputeEmissiveIntensityKeys.Temperature,Temperature);
+                    }
+                );
         }
     }
 }

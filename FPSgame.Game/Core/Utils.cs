@@ -1,5 +1,8 @@
 // Copyright (c) Stride contributors (https://stride3d.net) and Silicon Studio Corp. (https://www.siliconstudio.co.jp)
 // Distributed under the MIT license. See the LICENSE.md file in the project root for more information.
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Stride.Core.Mathematics;
 using Stride.Engine;
 
@@ -18,6 +21,12 @@ namespace FPSgame.Core
             var worldDirection = forward * logicDirection.Y + right * logicDirection.X;
             worldDirection.Normalize();
             return worldDirection;
+        }
+        
+    }
+    public static class EnumUtil {
+        public static IEnumerable<T> GetValues<T>() {
+            return Enum.GetValues(typeof(T)).Cast<T>();
         }
     }
 }
