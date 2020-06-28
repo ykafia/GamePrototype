@@ -9,11 +9,13 @@ namespace FPSgame.Chemistry
         Water,
         Mineral
     }
-    public enum Conductivity 
+    public enum Current
     {
-        Conductor,
-        Insulator
+        ON,
+        OFF
     }
+
+    
     public class ThermalSimulation
     {
         public static float Timestep = 1;

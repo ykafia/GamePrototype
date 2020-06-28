@@ -25,13 +25,15 @@ namespace FPSgame.Chemistry
                 cooldown = (cooldown - (float)Game.UpdateTime.Elapsed.TotalSeconds > 0) ? cooldown - (float)Game.UpdateTime.Elapsed.TotalSeconds : 0;
             else
             {
-                var collisions = Entity.Get<RigidbodyComponent>().Collisions;
+                var rb = Entity.Get<RigidbodyComponent>();
+                var collisions = rb.Collisions;
                 var numCollisions = collisions.Count;
                 Entity
                     .Scene
                     .Entities
-                    .Where(e => e.Get<RigidbodyComponent>() != null && e.Get<ThermalConductionScript>() != null)?
                     .AsParallel()
+                    .Where(e => e.Get<RigidbodyComponent>() != null && e.Get<ThermalConductionScript>() != null)?
+                    .Where(e => collisions.AsParallel().Select(e => e.ColliderB).Contains(rb))
                     .ForAll(
                         e =>
                         {
@@ -93,7 +95,8 @@ namespace FPSgame.Chemistry
             Temperature = getSign(Temperature) * normalize(getAbsolute(Temperature));
             // var material = Entity.Get<ModelComponent>().GetMaterial(0);
             DebugText.Print("Temperature target (Heating up) : " + Temperature, new Int2(x: 50, y: 100));
-            Entity.Get<ModelComponent>()
+            Entity
+                .Get<ModelComponent>()
                 .Materials
                 .AsParallel()
                 .ForAll(x => 
