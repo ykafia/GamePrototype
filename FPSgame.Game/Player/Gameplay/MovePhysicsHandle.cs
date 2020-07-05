@@ -18,19 +18,19 @@ namespace FPSgame.Player.Gameplay
 
         private bool isHolding = false;
 
-        public float MaxPickUpDistance = 3;
+        public float MaxPickUpDistance = 4;
 
         // Declared public member fields and properties will show in the game studio
         public override void Update()
         {
+
             if (Input.IsKeyPressed(Keys.R))
             {
 
                 if (!isHolding)
                 {
-
-                    var raycastStart = Entity.Transform.Parent.WorldMatrix.TranslationVector;
-                    var forward = Entity.Transform.Parent.WorldMatrix.Forward;
+                    var raycastStart = Entity.Transform.WorldMatrix.TranslationVector;
+                    var forward = Entity.Transform.WorldMatrix.Forward;
                     var raycastEnd = raycastStart + forward * MaxPickUpDistance;
 
                     var result = this.GetSimulation().Raycast(raycastStart, raycastEnd);
@@ -41,10 +41,12 @@ namespace FPSgame.Player.Gameplay
                         if (result.Collider is RigidbodyComponent rigidBody)
                         {
 
-                            target = Entity.Scene.Entities.First(e => e.Get<RigidbodyComponent>() == rigidBody);
-                            isHolding = true;
-                            CreateConstrait();
-
+                            target = Entity.Scene.Entities.FirstOrDefault(e => e.Get<RigidbodyComponent>() == rigidBody);
+                            if(target != null)
+                            {
+                                isHolding = true;
+                                CreateConstrait();
+                            }
                         }
                     }
                 }
@@ -64,7 +66,7 @@ namespace FPSgame.Player.Gameplay
             var rb = handle.Get<RigidbodyComponent>();
             var trb = target.Get<RigidbodyComponent>();
             trb.LinearFactor = Vector3.One * 0.8f;
-            trb.AngularFactor = Vector3.One * 0.01f;
+            trb.AngularFactor = Vector3.Zero;
 
             currentConstraint = 
                 Simulation.CreateConstraint(

@@ -19,9 +19,9 @@ namespace FPSgame.Player.Gameplay
     }
     public class WeaponSwitchScript : SyncScript
     {
-        private Weapons currentWeapon = Weapons.HeatGun;
-        private int scriptUsed = (int) Weapons.HeatGun;
-        private readonly SyncScript[] weaponScripts = {new MovePhysicsHandle(),new HeatGunScript()};
+        private Weapons currentWeapon = Weapons.PhysicsGun;
+        private int scriptUsed = (int) Weapons.PhysicsGun;
+        private readonly SyncScript[] weaponScripts = { new MovePhysicsHandle {MaxPickUpDistance = 4},new HeatGunScript()};
         public override void Start()
         {
             Entity.Add(weaponScripts[(int)currentWeapon]);
@@ -30,6 +30,7 @@ namespace FPSgame.Player.Gameplay
         // Declared public member fields and properties will show in the game studio
         public override void Update()
         {
+            DebugText.Print(Game.UpdateTime.FramePerSecond.ToString(), new Int2(x: 10, y: 10));
             DebugText.Print("Weapon used : " + currentWeapon, new Int2(x: 50, y: 50));
             DebugText.Print("Script index : " + scriptUsed, new Int2(x: 50, y: 75));
             DebugText.Print(
