@@ -54,7 +54,6 @@ Hierarchy:
         - ref!! 8561cc0f-afd9-42c8-b7ff-e232aa754599
         - ref!! d73ea548-967b-4c34-a869-5721b4dae5a6
         - ref!! 5f094a89-2ce1-49c0-8f55-8bee65ed98ba
-        - ref!! e1db2a6c-baf2-4152-af4b-667d051fda66
     Parts:
         -   Entity:
                 Id: 033850a8-7be8-422b-b34f-bbc83ec83597
@@ -2029,7 +2028,7 @@ Hierarchy:
                 Components:
                     70e9bb04d768b54998613e8ceefea848: !TransformComponent
                         Id: 04bbe970-68d7-49b5-9861-3e8ceefea848
-                        Position: {X: -3.0, Y: 1.0, Z: 12.0}
+                        Position: {X: -1.01225519, Y: 1.99668741, Z: 12.46906}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -2396,7 +2395,7 @@ Hierarchy:
                 Components:
                     ae9d48810854f64c90736b8aa80ccd32: !TransformComponent
                         Id: dae3c160-3bb1-44c5-a561-7fe379054e0f
-                        Position: {X: -1.0, Y: 1.0, Z: 13.0}
+                        Position: {X: -1.0, Y: 0.747832537, Z: 13.0}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -2427,10 +2426,6 @@ Hierarchy:
                                 Size: {X: 1.0, Y: 1.0, Z: 1.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    2f398bafff31b6ef6e8912b300781e9e: !FPSgame.Chemistry.Electricity.ElectricConductionScript,FPSgame.Game
-                        Id: 42ed72d4-22af-49d2-b007-858a43826811
-                        ElementalType: Metal
-                        Conduct: ON
                     e9f6b71ccdca270164eb894ea98db6d5: !FPSgame.Chemistry.Electricity.ElectricSourceScript,FPSgame.Game
                         Id: c7d9ce65-b106-40ae-8e5d-991e2709d776
         -   Entity:
@@ -2620,7 +2615,7 @@ Hierarchy:
                     458ac2590f953f4fb47242e21b3e420f: !TransformComponent
                         Id: 59c28a45-950f-4f3f-b472-42e21b3e420f
                         Position: {X: -14.999999, Y: 0.0, Z: 14.999999}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
+                        Rotation: {X: 0.0, Y: -0.707106769, Z: 0.0, W: 0.707106769}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children:
                             e7530b9a6be27e47b405f3991f670c13: ref!! 9a0b53e7-e26b-477e-b405-f3991f670c13
@@ -2966,7 +2961,7 @@ Hierarchy:
                 Components:
                     b0d1edd9a8132645a0d25f44658b463a: !TransformComponent
                         Id: d9edd1b0-13a8-4526-a0d2-5f44658b463a
-                        Position: {X: -3.0, Y: 1.0, Z: 14.0}
+                        Position: {X: -1.01112413, Y: 0.7329972, Z: 11.90282}
                         Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
                         Scale: {X: 1.0, Y: 1.0, Z: 1.0}
                         Children: {}
@@ -2997,10 +2992,9 @@ Hierarchy:
                                 Size: {X: 1.0, Y: 1.0, Z: 1.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                    b4053b81fe468b869b7bb0156e078016: !FPSgame.Chemistry.Electricity.ElectricConductionScript,FPSgame.Game
-                        Id: 05a21aed-0684-4175-98c1-f10ed4be42e2
-                        ElementalType: Metal
-                        Conduct: OFF
+                    3fe36ca00494f33a50ed706c4ddd3a01: !FPSgame.Chemistry.Electricity.ElectricSwitch,FPSgame.Game
+                        Id: 94220f48-79b8-4e0c-a57e-449c17bb16a3
+                        Target: null
         -   Entity:
                 Id: b1c994b5-3745-4e14-84b3-543f53faa09d
                 Name: Hands
@@ -3465,18 +3459,6 @@ Hierarchy:
                                 Size: {X: 1.0, Y: 1.0, Z: 1.0}
                                 LocalOffset: {X: 0.0, Y: 0.0, Z: 0.0}
                                 LocalRotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-        -   Entity:
-                Id: e1db2a6c-baf2-4152-af4b-667d051fda66
-                Name: GlobalConductionScript
-                Components:
-                    fefe2039a61b62488700f83174fb7fda: !TransformComponent
-                        Id: 4369b929-50e9-463f-b8d8-1574877e8af9
-                        Position: {X: 0.0, Y: 0.0, Z: 0.0}
-                        Rotation: {X: 0.0, Y: 0.0, Z: 0.0, W: 1.0}
-                        Scale: {X: 1.0, Y: 1.0, Z: 1.0}
-                        Children: {}
-                    6291f18f67d97e5da8cd627fa92b8095: !FPSgame.Chemistry.Electricity.GlobalConductionScript,FPSgame.Game
-                        Id: 1d95c5b3-ed0b-4de2-9109-6469f5cc287a
         -   Entity:
                 Id: e52f01e7-5e5c-47f4-8e14-221df3162bd2
                 Name: Stairs1x1x1_25

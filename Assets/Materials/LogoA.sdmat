@@ -52,14 +52,14 @@ Attributes:
         SpecularCavity: !ComputeFloat
             Value: 1.0
     Emissive: !MaterialEmissiveMapFeature
-        EmissiveMap: !ComputeShaderClassColor
-            MixinReference: ComputeEmissiveTemperature
-            Generics: {}
-            CompositionNodes: {}
-        Intensity: !ComputeShaderClassScalar
-            MixinReference: ComputeEmissiveIntensity
-            Generics: {}
-            CompositionNodes: {}
+        EmissiveMap: !ComputeBinaryColor
+            Operator: Add
+            LeftChild: !ComputeFloat4
+                Value: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+            RightChild: !ComputeFloat4
+                Value: {X: 0.0, Y: 0.0, Z: 0.0, W: 0.0}
+        Intensity: !ComputeFloat
+            Value: 0.0
     Overrides:
         UVScale: {X: 1.0, Y: 1.0}
 Layers:

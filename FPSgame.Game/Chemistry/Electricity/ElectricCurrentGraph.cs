@@ -27,22 +27,25 @@ namespace FPSgame.Chemistry.Electricity
                 return;
 
             // List all conducive connected bodies
-            List<Entity> connectedEntities =
+            var colliders =
                 root.Get<RigidbodyComponent>()
                     .Collisions
                     .AsParallel()
-                    .Select(c => c.ColliderB as RigidbodyComponent)
-                    .Where(x => x != null)
+                    .Where(c => (c.ColliderA as RigidbodyComponent) != null && (c.ColliderB as RigidbodyComponent != null))
+                    .Select(c => (c.ColliderA as RigidbodyComponent).Equals(root.Get<RigidbodyComponent>()) ? c.ColliderB as RigidbodyComponent : c.ColliderA as RigidbodyComponent)
+                    .Where(x => x != null);
+            List<Entity> connectedEntities = 
+                    colliders
                     .Select(rb => 
                         root.Scene.Entities.FirstOrDefault(
-                            e => e.Get<RigidbodyComponent>() == rb && root.Get<ElectricConductionScript>() != null ))
-                    .Where(x=> x != null)
+                            e => e.Get<RigidbodyComponent>() == rb && !root.Get<ElectricConductionScript>().Equals(null)))
                     .ToList();
             AdjacencyLists.Add(root, connectedEntities);
 
-            //Activate electric current
-            connectedEntities
+            // Activate electric current
+             connectedEntities
                 .AsParallel()
+                .Where(e => e.Get<ElectricConductionScript>() != null)
                 .ForAll(e => e.Get<ElectricConductionScript>().Conduct = Current.ON);
 
             foreach (var e in connectedEntities)
